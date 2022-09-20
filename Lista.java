@@ -23,23 +23,34 @@ public class Lista {
     }
 
     public static void creacionLista(){
-        System.out.println("Datos de la lista original: ");
-            Lista persona1 = new Lista("Pablo");
-            Lista persona2 = new Lista("Miguel");
-            Lista persona3 = new Lista("Juan");
-            Lista persona4 = new Lista("Santiago");
-            Lista persona5 = new Lista("Andres");
-            
-            listaNombres.add(persona1);
-            listaNombres.add(persona2);
-            listaNombres.add(persona3);
-            listaNombres.add(persona4);
-            listaNombres.add(persona5);
+        /*System.out.println("Datos de la lista original: ");
+        Lista persona1 = new Lista("Pablo");
+        Lista persona2 = new Lista("Miguel");
+        Lista persona3 = new Lista("Juan");
+        Lista persona4 = new Lista("Santiago");
+        Lista persona5 = new Lista("Andres");
+        
+        listaNombres.add(persona1);
+        listaNombres.add(persona2);
+        listaNombres.add(persona3);
+        listaNombres.add(persona4);
+        listaNombres.add(persona5);*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese la cantidad de nombres de la lista: ");
+        int cantidadDeLista = sc.nextInt();
+        int i = 1;
+        System.out.println("Ingrese nombres");
+        while(cantidadDeLista > listaNombres.size()){
+            System.out.print(i++ + ". ");
+            String nombre = sc.next();
+            listaNombres.add(new Lista(nombre));
+        }
     }
 
     public static void imprimirLista(){
         for(int i=0;i<listaNombres.size();i++){
-            System.out.println(listaNombres.get(i).getNombre());
+            System.out.println((i+1)+ ("- " )+listaNombres.get(i).getNombre());
         }
         System.out.println("Tamaño: " +listaNombres.size());
     }
@@ -51,7 +62,7 @@ public class Lista {
         
         Lista ultimoNombre = new Lista(nombre);
         
-        System.out.print("En que posicion: ");
+        System.out.print("En que posicion (posicion maxima " + listaNombres.size()+"): ");
         int numeroPosicion = sc.nextInt();
         
         if(numeroPosicion == listaNombres.size()){
@@ -71,15 +82,15 @@ public class Lista {
     }
 
     public static void removerValor(){
-        try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("¿Que valor de la lista quiere remover? ");
-            int removerPosicion = sc.nextInt() -1;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("¿Que valor de la lista quiere remover? (posicion maxima " + listaNombres.size()+"): ");
+        int removerPosicion = sc.nextInt();
+        removerPosicion = removerPosicion -1;
 
-            if(removerPosicion <= listaNombres.size()-1){
-                listaNombres.remove(removerPosicion);
-            }else{
-                System.out.println("Numero erroneo");
-            }
+        if(removerPosicion <= listaNombres.size()-1){
+            listaNombres.remove(removerPosicion);
+        }else{
+            System.out.println("Numero erroneo");
         }
     }
     
