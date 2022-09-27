@@ -1,5 +1,3 @@
-package Universidad.EstDatosAlgorit.Practica1.ListaJava.Practica1_Datos_Algoritmos;
-
 import java.util.*;
 
 public class Main {
