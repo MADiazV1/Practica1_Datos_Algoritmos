@@ -21,18 +21,6 @@ public class Lista {
     }
 
     public static void creacionLista(){
-        /*System.out.println("Datos de la lista original: ");
-        Lista persona1 = new Lista("Pablo");
-        Lista persona2 = new Lista("Miguel");
-        Lista persona3 = new Lista("Juan");
-        Lista persona4 = new Lista("Santiago");
-        Lista persona5 = new Lista("Andres");
-        
-        listaNombres.add(persona1);
-        listaNombres.add(persona2);
-        listaNombres.add(persona3);
-        listaNombres.add(persona4);
-        listaNombres.add(persona5);*/
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Ingrese la cantidad de nombres de la lista: ");
