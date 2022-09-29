@@ -8,6 +8,7 @@ public class Main {
         
         boolean condicion = true;
         while(condicion){
+            System.out.println("La mama de rios");
             System.out.println("-------------------------------------");
             System.out.println("1. Imprimir");
             System.out.println("2. Insertar");
